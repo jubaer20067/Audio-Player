@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:title="Add To Home Screen"
+        android:id="@+id/home_scrn"/>
+    <item
+        android:title="Add Widget"
+        android:id="@+id/add_widget"/>
+
+    <item
+        android:title="Resume Play Settings"
+        android:id="@+id/resume_ply"/>
+    <item
+        android:title=" Settings"
+        android:id="@+id/settings"/>
+
+
+</menu>

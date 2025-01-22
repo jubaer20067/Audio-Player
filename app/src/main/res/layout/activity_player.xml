@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PlayerActivity"
+    android:orientation="vertical"
+    android:background="@drawable/music_play_bg"
+    android:weightSum="10">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_390sdp"
+        android:layout_weight="7"
+        android:gravity="center"
+        android:orientation="vertical"
+        >
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="@dimen/_150sdp"
+            app:cardElevation="@dimen/_30sdp"
+            app:cardCornerRadius="@dimen/_360sdp"
+            android:layout_marginBottom="@dimen/_30sdp"
+            >
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/shapeableImageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/music_logo2"
+                android:scaleType="centerCrop"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:shapeAppearanceOverlay="@style/CustomShape" />
+
+
+        </androidx.cardview.widget.CardView>
+
+
+        <TextView
+            android:id="@+id/txtsong"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Song name"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_16ssp"
+            android:singleLine="true"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:ellipsize="marquee"
+            android:scrollHorizontally="true"
+            android:textAlignment="center"
+            android:padding="@dimen/_5sdp"
+            android:textStyle="italic"
+            />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="bottom"
+        android:layout_weight="3"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:weightSum="2"
+            >
+            <TextView
+                android:id="@+id/textsStart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="0.00"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/white"
+                android:layout_gravity="start"
+                android:layout_weight="1"
+
+                />
+
+            <TextView
+                android:id="@+id/textsStop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="0.00"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/white"
+                android:gravity="end"
+                android:layout_weight="1"
+                />
+
+        </LinearLayout>
+
+
+
+        <SeekBar
+            android:id="@+id/seekbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_30sdp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginBottom="@dimen/_10sdp"
+            >
+
+            <ImageButton
+                android:id="@+id/shuffleBtn"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:background="@android:color/transparent"
+                android:scaleType="centerCrop"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="@dimen/_50sdp"
+                android:src="@drawable/shuffle_of_icon" />
+
+            <ImageButton
+                android:id="@+id/loopBtn"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_alignParentEnd="true"
+                android:background="@android:color/transparent"
+                android:scaleType="centerCrop"
+                android:layout_marginEnd="@dimen/_50sdp"
+                android:src="@drawable/loop_off_icon" />
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="@dimen/_30sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            >
+
+            <ImageButton
+                android:id="@+id/rewindBtn"
+                android:layout_width="@dimen/_32sdp"
+                android:layout_height="@dimen/_32sdp"
+                android:src="@drawable/rewind_icon"
+                android:background="@android:color/transparent"
+                android:scaleType="centerCrop"
+                />
+
+            <ImageButton
+                android:id="@+id/prevBtn"
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:src="@drawable/prev_icon"
+                android:background="@android:color/transparent"
+                android:scaleType="centerCrop"
+                android:layout_marginStart="@dimen/_8sdp"
+                />
+
+            <ImageButton
+                android:tag="not playing"
+                android:id="@+id/playBtn"
+                android:layout_width="@dimen/_45sdp"
+                android:layout_height="@dimen/_45sdp"
+                android:src="@drawable/pause_icon"
+                android:background="@android:color/transparent"
+                android:scaleType="centerCrop"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                />
+
+
+            <ImageButton
+                android:id="@+id/nextBtn"
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:src="@drawable/prev_icon"
+                android:background="@android:color/transparent"
+                android:scaleType="centerCrop"
+                android:layout_marginEnd="@dimen/_8sdp"
+                />
+
+            <ImageButton
+                android:id="@+id/forwardBtn"
+                android:layout_width="@dimen/_32sdp"
+                android:layout_height="@dimen/_32sdp"
+                android:src="@drawable/forward_icon"
+                android:background="@android:color/transparent"
+                android:scaleType="centerCrop"
+
+                />
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

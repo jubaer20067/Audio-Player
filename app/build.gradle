@@ -1,0 +1,68 @@
+plugins {
+    alias(libs.plugins.android.application)
+}
+
+android {
+    namespace 'com.jubaer_ahmed.newmusicplayer'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.jubaer_ahmed.newmusicplayer"
+        minSdk 26
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    // Add this to show deprecation warnings during build
+    tasks.withType(JavaCompile) {
+        options.compilerArgs += ['-Xlint:deprecation']
+    }
+}
+
+dependencies {
+    // AndroidX and Material Components
+    implementation libs.appcompat
+    implementation libs.material
+    implementation libs.activity
+    implementation libs.constraintlayout
+
+    // Unit and Android tests
+    testImplementation libs.junit
+    androidTestImplementation libs.ext.junit
+    androidTestImplementation libs.espresso.core
+
+    // Media library
+    implementation 'androidx.media:media:1.6.0'
+
+    // Core KTX for Android
+    implementation 'androidx.core:core-ktx:1.10.1'
+
+    // AppCompat library
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+
+    // Responsive size libraries (sdp and ssp for scalable dp and sp)
+    implementation 'com.intuit.sdp:sdp-android:1.1.1'
+    implementation 'com.intuit.ssp:ssp-android:1.1.1'
+
+    // Dexter for runtime permissions
+    implementation 'com.karumi:dexter:6.2.3'
+
+
+    implementation 'com.google.android.material:material:1.9.0'
+
+}
